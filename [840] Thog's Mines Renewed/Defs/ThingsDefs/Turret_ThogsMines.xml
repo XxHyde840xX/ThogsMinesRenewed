@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<HediffDef>
+    <defName>HerbalToxicGas</defName>
+	<description>Toxic herbal fumes. They burn the eyes, lungs, and do horrible things to your body when inhaled, but are ultimately less than lethal on its own.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+    <label>toxic gas</label>
+    <makesSickThought>true</makesSickThought>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Immunizable">
+        <severityPerDayNotImmune>-0.33</severityPerDayNotImmune>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>initial</label>
+        <minSeverity>0.05</minSeverity>
+        <vomitMtbDays>2</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+		  <li>
+            <capacity>Sight</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>minor</label>
+        <minSeverity>0.2</minSeverity>
+        <vomitMtbDays>1</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.12</offset>
+          </li>
+		  <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.05</offset>
+          </li>		  
+		  <li>
+            <capacity>Sight</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>0.45</minSeverity>
+        <vomitMtbDays>.5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.14</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.25</offset>
+          </li>
+		  <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.15</offset>
+          </li>
+		  <li>
+            <capacity>Sight</capacity>
+            <offset>-0.15</offset>
+          </li>
+		  <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+	  <hediffGivers>
+		  <li Class="HediffGiver_Random">
+            <hediff>Asthma</hediff>
+            <mtbDays>25</mtbDays>
+			<partsToAffect>
+			<li>Lung</li>
+			</partsToAffect>
+			<countToAffect>2</countToAffect>
+          </li>
+       </hediffGivers>
+      <li>
+        <label>serious</label>
+        <minSeverity>0.65</minSeverity>
+        <vomitMtbDays>0.25</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.18</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.25</offset>
+          </li>
+		  <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+		  <li>
+            <capacity>Sight</capacity>
+            <offset>-0.2</offset>
+          </li>
+		  <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+		<hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>ChemicalDamageModerate</hediff>
+            <mtbDays>18</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+		  <li Class="HediffGiver_Random">
+            <hediff>Asthma</hediff>
+            <mtbDays>12</mtbDays>
+			<partsToAffect>
+			<li>Lung</li>
+			</partsToAffect>
+			<countToAffect>2</countToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Carcinoma</hediff>
+            <mtbDays>22</mtbDays>
+            <canAffectAnyLivePart>true</canAffectAnyLivePart>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>0.8</minSeverity>
+        <vomitMtbDays>0.2</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.30</setMax>
+          </li>
+        </capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>ChemicalDamageModerate</hediff>
+            <mtbDays>13</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+		  <li Class="HediffGiver_Random">
+            <hediff>Asthma</hediff>
+            <mtbDays>7</mtbDays>
+			<partsToAffect>
+			<li>Lung</li>
+			</partsToAffect>
+			<countToAffect>2</countToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Carcinoma</hediff>
+            <mtbDays>11</mtbDays>
+            <canAffectAnyLivePart>true</canAffectAnyLivePart>
+          </li>
+        </hediffGivers>
+      </li>
+    </stages>
+  </HediffDef>
+  
+ <ThingDef Class="GasTrap.Thing_AddsHediffDef" ParentName="BaseGas">
+    <defName>Gas_ToxicMine</defName>
+    <label>toxic gas</label>
+    <graphicData>
+      <texPath>Things/Gas/Puff</texPath>
+      <drawSize>2.5</drawSize>
+      <color>(0.1,0.9,0.5,0.4)</color>
+    </graphicData>
+	<thingClass>GasTrap.Thing_AddsHediff</thingClass>
+	<addHediff>HerbalToxicGas</addHediff>
+	<hediffAddChance>1.0</hediffAddChance>
+    <hediffSeverity>0.15</hediffSeverity>    
+	<gas>
+      <expireSeconds>
+        <min>20</min>
+        <max>45</max>
+      </expireSeconds>
+      <blockTurretTracking>true</blockTurretTracking>
+      <accuracyPenalty>0.25</accuracyPenalty>
+      <rotationSpeed>10</rotationSpeed>
+	  
+    </gas>
+  </ThingDef>
+
+<ThingDef Name="TrapMineBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building_TrapExplosive</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.1,0,0.8,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconOffset>(0,-0.14)</uiIconOffset>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <stealable>false</stealable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <Mass>1.5</Mass>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Flammability>1</Flammability>
+      <Beauty>-1</Beauty>
+      <TrapSpringChance>1.0</TrapSpringChance>
+    </statBases>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <isTrap>true</isTrap>
+      <trapPeacefulWildAnimalsSpringChanceFactor>0.1</trapPeacefulWildAnimalsSpringChanceFactor>
+      <expandHomeArea>false</expandHomeArea>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>IEDs</li>
+	  <li>Fabrication</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TrapMineBase">
+    <defName>TrapLandmine</defName>
+    <label>High Explosive Landmine</label>
+    <description>A purpose-built defensive fragmentation landmine, which detonates near instantaneously upon being activated. Not as wide a radius as an improvised device, but cheaper, and far more reliable.</description>
+    <graphicData>
+      <texPath>Weapon/MineHE</texPath>
+    </graphicData>    
+	<stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <costList>
+	  <Steel>5</Steel>
+	  <Chemfuel>15</Chemfuel>
+    </costList>
+    <designationHotKey>Misc7</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.5</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <startWickHitPointsPercent>0.1</startWickHitPointsPercent>
+        <wickTicks>0</wickTicks>
+      </li>
+    </comps>
+    <specialDisplayRadius>2.5</specialDisplayRadius>
+  </ThingDef>
+
+  <ThingDef ParentName="TrapMineBase">
+    <defName>TrapMine_Incendiary</defName>
+    <label>Incendiary Landmine</label>
+    <description>A machined metallic shell with a simple pressure trigger, filled to the brim with volatile chemfuel substrates. Ignites a large radius in fire when activated.</description>
+    <graphicData>
+      <texPath>Weapon/MineFire</texPath>
+    </graphicData>
+	<stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <costList>
+	  <Chemfuel>20</Chemfuel>
+    </costList>
+    <designationHotKey>Misc8</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.5</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+		<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+        <preExplosionSpawnChance>0.45</preExplosionSpawnChance>
+        <startWickHitPointsPercent>0.15</startWickHitPointsPercent>
+        <wickTicks>0</wickTicks>
+      </li>
+    </comps>
+    <specialDisplayRadius>3.5</specialDisplayRadius>
+  </ThingDef>
+  
+  <ThingDef ParentName="TrapMineBase">
+    <defName>TrapMine_Breach</defName>
+    <label>Breaching Mine</label>
+    <description>Not really a landmine at all, but rather a breaching charge containing a highly concussive ultrasonic blast single-use capacitor. The damage against living targets is negligible, but it'll blow a hole in damn near anything. Set it off with a bullet or a good smack, and then set off and watch it work! Once ignited, it has 10 seconds before setting off, in which it will almost be guaranteed to destroy any structures within its radius. Perfect for clearing up debris, taking down enemy structures, or for making especially creative traps..</description>
+    <graphicData>
+      <texPath>Weapon/MineBreach</texPath>
+    </graphicData>
+    <costList>
+	  <Steel>20</Steel>
+	  <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <designationHotKey>Misc8</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveDamageType>SuperThump</explosiveDamageType>
+		<damageAmountBase>15</damageAmountBase>
+		<explosionRadius>2.5</explosionRadius >
+		<stoppingPower>3</stoppingPower>
+		<soundExplode>ThumpCannon_Impact</soundExplode>
+        <startWickHitPointsPercent>0.95</startWickHitPointsPercent>
+        <wickTicks>600</wickTicks>
+      </li>
+    </comps>
+    <specialDisplayRadius>2.5</specialDisplayRadius>
+  </ThingDef>
+
+ <DamageDef>
+    <defName>SuperThump</defName>
+    <label>super thump</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has been concussed to death.</deathMessage>
+    <hediff>Crush</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <minDamageToFragment>15</minDamageToFragment>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>1500</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>750</buildingDamageFactorPassable>
+    <plantDamageFactor>8</plantDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.73, 0.93, 0.96)</explosionColorCenter>
+    <explosionColorEdge>(0.71, 0.82, 0.90)</explosionColorEdge>
+    <soundExplosion>Explosion_Thump</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+  <ThingDef ParentName="TrapMineBase">
+    <defName>TrapMine_EMP</defName>
+    <label>EMP Landmine</label>
+    <description>A landmine shell filled with high-frequency electromagnetic disruptors, which temporarily scramble any electronic circuit feed and cause momentary malfunction in mechanoids within its radius when activated.</description>
+    <graphicData>
+      <texPath>Weapon/MineEMP</texPath>
+    </graphicData>
+	<stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <costList>
+	  <Steel>5</Steel>
+	  <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <designationHotKey>Misc9</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveDamageType>EMP</explosiveDamageType>
+        <startWickHitPointsPercent>0.05</startWickHitPointsPercent>
+        <wickTicks>0</wickTicks>
+      </li>
+    </comps>
+    <specialDisplayRadius>2.9</specialDisplayRadius>
+  </ThingDef>
+  
+    <ThingDef ParentName="TrapMineBase">
+    <defName>TrapMine_Stun</defName>
+    <label>Stun Landmine</label>
+    <description>A landmine shell filled with low-frequency electronic pulse emitters, which cause momentary paralysis and loss of motor function to organics within its radius. Perfect for incapacitating enemies temporarily, rather than outright killing them.</description>
+    <graphicData>
+      <texPath>Weapon/MineStun</texPath>
+    </graphicData>
+	<stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <costList>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <designationHotKey>Misc9</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveDamageType>Stun</explosiveDamageType>
+        <startWickHitPointsPercent>0.05</startWickHitPointsPercent>
+        <wickTicks>0</wickTicks>
+      </li>
+    </comps>
+    <specialDisplayRadius>2.9</specialDisplayRadius>
+  </ThingDef>
+
+  <ThingDef ParentName="TrapMineBase">
+    <defName>TrapMine_Toxic</defName>
+    <label>Toxic Landmine</label>
+    <description>A simple machined metal shell with a pressure activated trigger, which releases a cloud of choking green gas derived from herbal medicines when activated. These gases burn their target's eyes, and will greatly sicken those who are improperly protected against them, though they are not inheritly lethal on their own.</description>
+    <graphicData>
+      <texPath>Weapon/MineToxic</texPath>
+    </graphicData>
+	<stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <costList>
+      <MedicineHerbal>8</MedicineHerbal>
+	  <Chemfuel>5</Chemfuel>
+    </costList>
+    <designationHotKey>Misc10</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>5</explosiveRadius>
+        <explosiveDamageType>Smoke</explosiveDamageType>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+        <postExplosionSpawnThingDef>Gas_ToxicMine</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+        <wickTicks>0</wickTicks>
+      </li>
+    </comps>
+    <specialDisplayRadius>5</specialDisplayRadius>
+  </ThingDef>
+
+ </Defs>
